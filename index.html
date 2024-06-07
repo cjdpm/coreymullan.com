@@ -1,12 +1,140 @@
 <!DOCTYPE html>
 <html>
+    
 <head>
-<title>Page Title</title>
+    <style>
+        .Numberbox{
+            border-style: solid;
+            padding: 20px;
+            width: 50px;
+            text-align: center;
+
+        }
+        #add{
+          border-style: dotted;
+          padding: 30px;
+          width: 75px;
+          text-align:center;
+        }
+        #subtract{
+          border-style: dotted;
+          padding:30px;
+          width: 75px;
+          text-align: center;
+          
+        }
+        #equals{
+          border-style: dotted;
+          padding:30px;
+          width: 75px;
+          text-align: center;
+          
+        }
+        .row{
+        display: flex; 
+        
+
+        }
+        #result{
+          border-style: solid;
+          width: 125px;
+          height: 100px;
+          text-align: center;
+          padding: 30px;
+        }
+        
+    </style>
+<title>Calculator</title>
 </head>
 <body>
+  <div id="result">result goes here </div>
+    
+  <div class = "row">
+    <div class = "Numberbox">7</div>
+    <div class = "Numberbox">8</div>
+    <div class = "Numberbox">9</div>
+    <div id = "add">+</div>
+    </div>
+    <div class = "row">
+      <div class = "Numberbox">4</div>
+      <div class = "Numberbox">5</div>
+      <div class = "Numberbox">6</div>
+      <div id = "subtract">-</div>
+      </div>
+      <div class = "row">
+      <div class = "Numberbox">1</div>
+      <div class = "Numberbox">2</div>
+      <div class = "Numberbox">3</div>
+      <div id = "equals">=</div>
+      </div>
+    <div class = "row">
+      <div class = "Numberbox">0</div>
+      </div>
+    
+    
+    
+    
 
-<h1>My First Heading</h1>
+<h1>calc</h1>
 <p>My first paragraph.</p>
 
+<script>
+  var currentInput = ""
+  var number1 = ""
+  var number2 = ""
+  var resultDiv = document.getElementById('result')
+
+  
+
+var numberDivs = document.getElementsByClassName('Numberbox')
+Array.from(numberDivs).forEach((div) => {
+   const number = div.innerHTML;
+  div.addEventListener('click', (event) => {
+      number1 += number;
+      resultDiv.innerHTML = number1;
+  })
+})
+
+getElementById('add').addEventListener('click', (event)=> {
+var numberDivs = document.getElementsByClassName('Numberbox')
+Array.from(numberDivs).forEach((div) => {
+  const num = div.innerHTML;
+  div.addEventListener('click' , (event) => {
+    number2 += number;
+    resultDiv.innterHTML = number2;
+  })
+})
+})
+
+
+getElementById('equals').addEventListener('click',(event) => {
+  var total = document.getElementById('result')
+  total.innterHTML = newInput + currentInput;
+
+
+})
+
+console.log(currentNum);
+
+
+    
+    
+    
+    
+        
+    
+        
+
+
+
+
+
+
+
+    
+    
+       
+  
+</script>
 </body>
 </html>
